@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% block content %}
+    <article>
+        <!--lbox begin-->
+        <div class="lbox">
+            <div class="whitebg lanmu"><img src="/static/images/track.jpg">
+                <h1>学习笔记</h1>
+                <h3>实践是检验真理的唯一标准</h3>
+            </div>
+
+            <div class="zhuanti whitebg">
+                <h2 class="htitle"><span class="hnav"><a href="/diary/java/" target="_blank">更多</a></span>Java</h2>
+                <ul>
+                    {% for article in javaArticles %}
+
+                        <li><i class="ztpic"><a href="/diary/{{ article.category }}/content-{{ article.id }}.html"
+                                                target="_blank"><img src="/media/{{ article.img }}"></a></i>
+                            <b>{{ article.title }}</b><span>{{ article.excerpt }}</span><a
+                                    href="/diary/{{ article.category }}/content-{{ article.id }}.html" target="_blank"
+                                    class="readmore">文章阅读</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="zhuanti whitebg">
+                <h2 class="htitle"><span class="hnav"><a href="/diary/cpp/" target="_blank">更多</a></span>C++</h2>
+                <ul>
+                    {% for article in cpprticles %}
+
+                        <li><i class="ztpic"><a href="/diary/{{ article.category }}/content-{{ article.id }}.html"
+                                                target="_blank"><img src="/media/{{ article.img }}"></a></i>
+                            <b>{{ article.title }}</b><span>{{ article.excerpt }}</span><a
+                                    href="/diary/{{ article.category }}/content-{{ article.id }}.html" target="_blank"
+                                    class="readmore">文章阅读</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+            <div class="zhuanti whitebg">
+                <h2 class="htitle"><span class="hnav"><a href="/diary/python/" target="_blank">更多</a></span>python</h2>
+                <ul>
+                    {% for article in pythonArticles %}
+
+                        <li><i class="ztpic"><a href="/diary/{{ article.category }}/content-{{ article.id }}.html"
+                                                target="_blank"><img src="/media/{{ article.img }}"></a></i>
+                            <b>{{ article.title }}</b><span>{{ article.excerpt }}</span><a
+                                    href="/diary/{{ article.category }}/content-{{ article.id }}.html" target="_blank"
+                                    class="readmore">文章阅读</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="zhuanti whitebg">
+                <h2 class="htitle"><span class="hnav"><a href="/diary/linux/" target="_blank">更多</a></span>linux</h2>
+                <ul>
+                    {% for article in cpprticles %}
+
+                        <li><i class="ztpic"><a href="/diary/{{ article.category }}/content-{{ article.id }}.html"
+                                                target="_blank"><img src="/media/{{ article.img }}"></a></i>
+                            <b>{{ article.title }}</b><span>{{ article.excerpt }}</span><a
+                                    href="/diary/{{ article.category }}/content-{{ article.id }}.html" target="_blank"
+                                    class="readmore">文章阅读</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        <div class="zhuanti whitebg">
+                <h2 class="htitle"><span class="hnav"><a href="/diary/databases/" target="_blank">更多</a></span>数据库</h2>
+                <ul>
+                    {% for article in databasesArticles %}
+
+                        <li><i class="ztpic"><a href="/diary/{{ article.category }}/content-{{ article.id }}.html"
+                                                target="_blank"><img src="/media/{{ article.img }}"></a></i>
+                            <b>{{ article.title }}</b><span>{{ article.excerpt }}</span><a
+                                    href="/diary/{{ article.category }}/content-{{ article.id }}.html" target="_blank"
+                                    class="readmore">文章阅读</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!--bloglist end-->
+        </div>
+        <div class="rbox">
+        </div>
+        <div class="ad whitebg imgscale">
+
+            <div class="whitebg paihang">
+                <h2 class="htitle">点击排行</h2>
+                <section class="topnews imgscale"><img src="/static/images/h1.jpg"></section>
+
+                <ul>
+                    {% for  ra in rankArticles %}
+                        <li><i></i><a href="/diary/{{ ra.category }}/content-{{ ra.id }}.html">{{ ra.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="ad whitebg imgscale">
+                <ul>
+                    <a href="https://promotion.aliyun.com/ntms/act/enterprise-discount.html?userCode=cdru5f07"
+                       target="_blank"><img src="/static/images/ad/259_194.jpg"></a>
+                </ul>
+            </div>
+            <div class="whitebg tuijian">
+                <h2 class="htitle">本栏推荐</h2>
+                <section class="topnews imgscale"><img src="/static/images/h2.jpg"></section>
+                <ul>
+                    {% for rcmda in recommendArticle %}
+
+                        <li><a href="/diary/{{ rcmda.category }}/content-{{ rcmda.id }}.html"><i><img
+                            src="/media/{{ rcmda.img }}"></i>
+                        <p>{{ rcmda.title }}</p></a>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="whitebg tongji">
+                <h2 class="htitle">微信公众号</h2>
+                <p>扫面二维码，关注我，一起学习交流</p>
+                <img src="/static/images/gzh.jpg" class="tongji_gzh">
+
+            </div>
+
+            <div class="links whitebg">
+                <h2 class="htitle"><span class="sqlink"></span>友情链接</h2>
+                <ul>
+                    {% for link in blogroll %}
+                        <li><a href="{{ link.linkurl }}" target="_blank">{{ link.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </article>
+{% endblock %}
